@@ -142,7 +142,7 @@
          if set to:0  autoerasing is disabled.
          if set to:>0 autoerasing is enabled and done for data older then [value] days.
       -->
-      <autoerase_olddata>30</autoerase_olddata>
+      <autoerase_olddata>14</autoerase_olddata>
     </sql-db>
 
     <!-- rrdtool-database -->
@@ -152,7 +152,7 @@
               own name and suffix
     -->
     <rrdtool-db>
-      <enable>on</enable>
+      <enable>off</enable>
       <step_seconds>60</step_seconds>
       <starttime_utc>1690000000</starttime_utc>
       <!-- autocreate_draw:
@@ -174,7 +174,7 @@
       <proto_type>RAW</proto_type>  <!-- protocoll-types     are:
                                             RAW:=transparent  ; TRX   :=TBD (transceiver-messages with header) -->
       <parameter name="ASYNC">
-        <serialdevice>/dev/serial0</serialdevice>
+        <serialdevice>/dev/ttyAMA1</serialdevice>
         <inputtestfilepath></inputtestfilepath>
         <baudrate>9600</baudrate>
         <config>"8N1"</config>  <!-- only 8N1 available -->
@@ -187,7 +187,7 @@
     <logging>
       <path>./var/log</path>
       <default_filename>ht_default.log</default_filename>
-      <loglevel>INFO</loglevel>   <!-- loglevel-types are (details see library: logging.py):
+      <loglevel>WARNING</loglevel>   <!-- loglevel-types are (details see library: logging.py):
                                         DEBUG    := Debug-Level
                                         INFO     := Information-Level
                                         WARNING  := Warning-Level

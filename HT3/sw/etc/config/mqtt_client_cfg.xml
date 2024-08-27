@@ -33,7 +33,7 @@
     <logging>
         <path>./var/log</path>
         <filename>mqtt_client.log</filename>
-        <loglevel>INFO</loglevel>   <!-- loglevel-types are (details see library: logging.py):
+        <loglevel>WARNING</loglevel>   <!-- loglevel-types are (details see library: logging.py):
                                         DEBUG    := Debug-Level
                                         INFO     := Information-Level
                                         WARNING  := Warning-Level
@@ -58,8 +58,8 @@
         <Retain>True</Retain>                   <!-- True / False -->
         <LastWillRetain>True</LastWillRetain>   <!-- True / False -->
         <Publish_OnlyNewValues>True</Publish_OnlyNewValues>  <!-- True / False -->
-        <client_id>myHeater_MQTT_Client_test</client_id> <!-- unique ID for your purposes -->
-        <device_id></device_id> 
+        <client_id>Junkers_MQTT_Client</client_id> <!-- unique ID for your purposes -->
+        <device_id>[localhost]</device_id>
           <!-- optional device_id used for unique topic_name(s)
                 - leave it empty if not required
                 - [hostname] or [localhost] are replaced with real hostname

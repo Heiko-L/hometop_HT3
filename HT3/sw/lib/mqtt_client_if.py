@@ -394,7 +394,7 @@ class cmqtt_baseclass(threading.Thread, cmqtt_cfg):
         print(infostr)
         if rc == 0:
             self._wait4connection = False
-            self.__client.publish(self.LWT_topic_name(), 'Online', qos=self.cfg_QoS(), retain=self.cfg_LastWillRetain())
+            self.__client.publish(self.LWT_topic_name(), '1', qos=self.cfg_QoS(), retain=self.cfg_LastWillRetain())
 
     def processing_payload(self, userdata, topic, payload):
         """overwrite this methode for your own message-handling."""
@@ -470,7 +470,7 @@ class cmqtt_baseclass(threading.Thread, cmqtt_cfg):
                 if len(self.cfg_username()) > 0 and len(self.cfg_password()) > 0:
                     self.__client.username_pw_set(self.cfg_username(), self.cfg_password())
                 #set LWT informations
-                self.__client.will_set(self.LWT_topic_name(), 'Offline', qos=self.cfg_QoS(), retain=self.cfg_LastWillRetain())
+                self.__client.will_set(self.LWT_topic_name(), '0', qos=self.cfg_QoS(), retain=self.cfg_LastWillRetain())
                 #connect to broker
                 infostr = "MQTT Pub-Client try to connected to MQTT-broker at address:{0}; port:{1}".format(self.cfg_brokeraddress(),
                                                                                         self.cfg_portnumber())
@@ -679,7 +679,7 @@ class cmqtt_client(cmqtt_baseclass):
         if rc == 0:
             self._wait4connection = False
             self._client_handle(client)
-            self._client_handle().publish(self.LWT_topic_name(), 'Online', qos=self.cfg_QoS(), retain=self.cfg_LastWillRetain())
+            self._client_handle().publish(self.LWT_topic_name(), '1', qos=self.cfg_QoS(), retain=self.cfg_LastWillRetain())
             self.subscribe_settopics()
 
     def run(self):

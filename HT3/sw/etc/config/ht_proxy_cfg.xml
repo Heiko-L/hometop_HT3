@@ -87,16 +87,16 @@
     <logfilepath>./var/log/ht_proxy.log</logfilepath>
     <ht_transceiver_if devicename="RX">
       <parameter>
-        <serialdevice>/dev/serial0</serialdevice>
-        <baudrate>19200</baudrate>
+        <serialdevice>/dev/ttyAMA1</serialdevice>
+        <baudrate>9600</baudrate>
         <config>"8N1"</config>  <!-- only 8N1 available -->
       </parameter>
       <devicetype>RX</devicetype>
     </ht_transceiver_if>
     <ht_transceiver_if devicename="MODEM">
       <parameter>
-        <serialdevice>/dev/serial0</serialdevice>
-        <baudrate>19200</baudrate>
+        <serialdevice>/dev/ttyAMA1</serialdevice>
+        <baudrate>9600</baudrate>
         <config>"8N1"</config>  <!-- only 8N1 available -->
       </parameter>
       <devicetype>MODEM</devicetype>

@@ -1,0 +1,6 @@
+.HT3-*
+HT3/sw/var/*
+HT3/.flagged
+HT3/sw/cdata.log
+HT3/sw/lib/__pycache__/*
+HT3/sw/raspinfo.txt
